@@ -34,5 +34,57 @@ A demo tools of the [Hadoop infrastructure](http://147.228.63.46:8888) and the [
 # REST-API
 Because we suppose these cloud solutions to be accessible from micro devices (e. g. Raspberry PI) both tools can be also controlle from 3rd party tools by a REST API.
 
+The directory scripts contains some examples on how to use the REST API. All the scripts print the help of usage once called without parameters.
+
+## Apache Hadoop
+There is an existing REST API [Webhdfs](https://hadoop.apache.org/docs/r1.0.4/webhdfs.html) for accessing HDFS. There are prepared scripts in scripts/hdfs directory configured for the online tools described above. They do not provide complete functionality provided by Webhdfs but provide helping hand for working with hdfs. They can be easily modified for other purposes.
+
+## Workflow Designer
+The user can comfortably design a workflow by the worfklow designer online tool described above. Such a workflow can be exported in JSON format and reused later. This JSON is then used as a parametr of the run-job.sh script. This script prints a job id that can be used once asked for a job status.
+
 # Possible Issues
 
+* Workflow designer says Unauthorized - There must be created a user account in the workfow designer. The REST API is authorized not via the password byt via the authenticating token generated for each user and sent on request.
+
+* HDFS says  401 Authentication required - Hadoop is secured by Kerberos. A kerberos client must be installed and configured. A testing credentials are provided on request.
+
+* curl is not recognized as an internal or external command - curl is used by scripts. It must be installed
+
+# Solutions
+## Configure Kerberos
+add following code to /etc/krb5.konf
+```
+[libdefaults]
+default_realm = CLOUDERA
+dns_lookup_kdc = false
+dns_lookup_realm = false
+ticket_lifetime = 8640000
+renew_lifetime = 8640000
+forwardable = true
+default_tgs_enctypes = rc4-hmac
+default_tkt_enctypes = rc4-hmac
+permitted_enctypes = rc4-hmac
+udp_preference_limit = 1
+kdc_timeout = 3000
+[realms]
+CLOUDERA = {
+kdc = quickstart.cloudera
+admin_server = quickstart.cloudera
+}
+```
+add 
+```
+147.228.63.46   quickstart.cloudera
+```
+to /etc/hosts
+
+Install krb5-client by
+```
+apt-get install krb5-user 
+```
+Then type
+```
+kinit <user-name>
+```
+
+type the password once prompted.
