@@ -46,8 +46,9 @@ The user can comfortably design a workflow by the worfklow designer online tool 
 
 # Possible Issues
 
-* Workflow designer says Unauthorized - There must be created a user account in the workfow designer. The REST API is authorized not via the password byt via the authenticating token generated for each user and sent on request.
+## Workflow designer says Unauthorized 
 
+There must be created a user account in the workfow designer. The REST API is authorized not via the password byt via the authenticating token generated for each user and sent on request.
 
 ## Solution
 
@@ -57,7 +58,9 @@ The user can comfortably design a workflow by the worfklow designer online tool 
 * Ask for the token
 
 
-* HDFS says  401 Authentication required - Hadoop is secured by Kerberos. A kerberos client must be installed and configured. A testing credentials are provided on request.
+## HDFS says  401 Authentication required 
+
+Hadoop is secured by Kerberos. A kerberos client must be installed and configured. A testing credentials are provided on request.
 
 ## Solution
 ### Configure Kerberos
@@ -100,9 +103,14 @@ then type the password once prompted.
 
 
 
-* curl is not recognized as an internal or external command - curl is used by scripts. It must be installed
+## curl is not recognized as an internal or external command 
+
+curl is used by scripts. It must be installed
+
 ## Solution
+
 ### install curl 
+
 ```
 apt install curl
 ```
