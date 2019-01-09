@@ -87,4 +87,4 @@ Then type
 kinit <user-name>
 ```
 
-type the password once prompted.
+then type the password once prompted.
