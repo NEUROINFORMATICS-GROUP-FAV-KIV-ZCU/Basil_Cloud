@@ -42,16 +42,25 @@ There is an existing REST API [Webhdfs](https://hadoop.apache.org/docs/r1.0.4/we
 ## Workflow Designer
 The user can comfortably design a workflow by the worfklow designer online tool described above. Such a workflow can be exported in JSON format and reused later. This JSON is then used as a parametr of the run-job.sh script. This script prints a job id that can be used once asked for a job status.
 
+# Script usage examples
+
 # Possible Issues
 
 * Workflow designer says Unauthorized - There must be created a user account in the workfow designer. The REST API is authorized not via the password byt via the authenticating token generated for each user and sent on request.
 
+
+## Solution
+
+### Register in the workflow designer server
+* Go to the link above. 
+* Register and check your email for temporal password. 
+* Ask for the token
+
+
 * HDFS says  401 Authentication required - Hadoop is secured by Kerberos. A kerberos client must be installed and configured. A testing credentials are provided on request.
 
-* curl is not recognized as an internal or external command - curl is used by scripts. It must be installed
-
-# Solutions
-## Configure Kerberos
+## Solution
+### Configure Kerberos
 add following code to /etc/krb5.konf
 ```
 [libdefaults]
@@ -89,7 +98,11 @@ kinit <user-name>
 
 then type the password once prompted.
 
-## Register in the workflow designer server
-* Go to the link above. 
-* Register and check your email for temporal password. 
-* Ask for the token
+
+
+* curl is not recognized as an internal or external command - curl is used by scripts. It must be installed
+## Solution
+### install curl 
+```
+apt install curl
+```
