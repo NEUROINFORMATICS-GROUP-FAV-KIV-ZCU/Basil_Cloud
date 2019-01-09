@@ -88,3 +88,8 @@ kinit <user-name>
 ```
 
 then type the password once prompted.
+
+## Register in the workflow designer server
+* Go to the link above. 
+* Register and check your email for temporal password. 
+* Ask for the token
