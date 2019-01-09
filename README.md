@@ -50,7 +50,7 @@ returns a jobId
 ```
 ./get-job-status.sh <id returned by previous script> 147.228.63.46
   ```
-  returns a json with info
+  returns a json containing:
   ```json
   {
     ...
