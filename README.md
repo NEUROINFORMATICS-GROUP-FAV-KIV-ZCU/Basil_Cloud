@@ -59,7 +59,7 @@ returns a jobId
       "value": "30"
      },
 
-   ...
+    ...
     "status": "COMPLETED"
   }
 ```
