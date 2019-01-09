@@ -43,19 +43,25 @@ There is an existing REST API [Webhdfs](https://hadoop.apache.org/docs/r1.0.4/we
 The user can comfortably design a workflow by the worfklow designer online tool described above. Such a workflow can be exported in JSON format and reused later. This JSON is then used as a parametr of the run-job.sh script. This script prints a job id that can be used once asked for a job status.
 
 # Script usage examples
-./run-job.sh ../../test-data/sum.json jezekp@kiv.zcu.cz <token> 147.228.63.46 - returns a jobId
-./get-job-status.sh <id returned by previous script> 147.228.63.46 - returns a json with info
-  
+```
+./run-job.sh ../../test-data/sum.json jezekp@kiv.zcu.cz <token> 147.228.63.46 
+```
+returns a jobId
+```
+./get-job-status.sh <id returned by previous script> 147.228.63.46
+  ```
+  returns a json with info
   ```json
-...
-                "output": {
-                    "type": "STRING",
-                    "value": "30"
-                },
+  {
+    ...
+     "output": {
+      "type": "STRING",
+      "value": "30"
+     },
 
-...
+   ...
     "status": "COMPLETED"
-}
+  }
 ```
 
 
