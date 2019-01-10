@@ -17,7 +17,7 @@ if [[ $# -eq 2 ]] ; then
 else
  echo "Usage: dataUpload.sh dir/file host"
  echo "dir/file -- a path to a directory or a file for upload"
- echo "host -- host ip or domain name of the server operating the workflow designer server"
+ echo "host -- host ip or domain name of the server operating Hadoop"
 fi
 
 

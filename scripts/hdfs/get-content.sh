@@ -11,7 +11,7 @@ if [[ $# -eq 2 ]] ; then
 else
  echo "Usage: get-content.sh dir/file host"
  echo "dir/file -- a path to a directory or a file to be downloaded"
- echo "host -- host ip or domain name of the server operating the workflow designer server"
+ echo "host -- host ip or domain name of the server operating Hadoop"
 fi
 
 
