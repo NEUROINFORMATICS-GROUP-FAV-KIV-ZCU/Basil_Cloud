@@ -64,6 +64,44 @@ returns a jobId
   }
 ```
 
+```
+./dataUpload.sh ../../test-data/test-file.txt 147.228.63.46
+```
+Uploads a test data file to hdfs
+
+```
+./get-content.sh test-file.txt 147.228.63.46
+```
+Allows getting the file and see its content. Hello World! in this case
+
+
+```
+./file-oparation.sh test-file.txt 147.228.63.46 GETFILESTATUS
+
+```
+Shows JSON describing the file:
+  ```json
+{
+    "FileStatus": {
+        "accessTime": 1547109036066,
+        "blockSize": 134217728,
+        "childrenNum": 0,
+        "fileId": 101788,
+        "group": "digitalAssistanceSystem",
+        "length": 13,
+        "modificationTime": 1547109036265,
+        "owner": "hdfs",
+        "pathSuffix": "",
+        "permission": "755",
+        "replication": 1,
+        "storagePolicy": 0,
+        "type": "FILE"
+    }
+}
+
+```
+
+
 
 # Possible Issues
 
