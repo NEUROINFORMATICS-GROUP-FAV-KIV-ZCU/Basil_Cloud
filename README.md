@@ -76,6 +76,7 @@ There must be created a user account in the workfow designer. The REST API is au
 ### Register in the workflow designer server
 * Go to the link above. 
 * Register and check your email for temporal password. 
+* Change the password after first login
 * Ask for the token
 
 
