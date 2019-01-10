@@ -63,6 +63,7 @@ returns a jobId
     "status": "COMPLETED"
   }
 ```
+Following scripts suppose the user is already authenticated by Kerberos (kinit has been used already)
 
 ```
 ./dataUpload.sh ../../test-data/test-file.txt 147.228.63.46
