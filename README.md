@@ -40,7 +40,7 @@ The directory scripts contains some examples on how to use the REST API. All the
 There is an existing REST API [Webhdfs](https://hadoop.apache.org/docs/r1.0.4/webhdfs.html) for accessing HDFS. There are prepared scripts in scripts/hdfs directory configured for the online tools described above. They do not provide complete functionality provided by Webhdfs but provide helping hand for working with hdfs. They can be easily modified for other purposes.
 
 ## Workflow Designer
-The user can comfortably design a workflow by the worfklow designer online tool described above. Such a workflow can be exported in JSON format and reused later. This JSON is then used as a parametr of the run-job.sh script. This script prints a job id that can be used once asked for a job status.
+The user can comfortably design a workflow by the worfklow designer online tool described above. Such a workflow can be exported in JSON format and reused later. This JSON is then used as a parametr of the run-job.sh script in the scripts/workflow-designer directory. The script prints a job id that can be used once asked for a job status by calling the script get-job-status.sh in the same directory.
 
 # Script usage examples
 
